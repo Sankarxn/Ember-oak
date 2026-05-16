@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | Ember & Oak</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom navbar-solid">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EMBER & OAK</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1 text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                     <li class="nav-item"><a class="nav-link" href="our-story.html">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="reservations.html" class="btn btn-primary btn-sm px-4 rounded-pill">Reserve a Table</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="hero hero-sm" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container hero-content text-center pt-5">
+            <h1 class="hero-title font-display">Reserve Your Table</h1>
+            <p class="lead mb-0">We'd love to have you. Book online in under a minute.</p>
+        </div>
+    </header>
+
+    <!-- Reservation Form Section -->
+    <section class="section-xl bg-cream">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="text-center mb-5">
+                        <h2 class="font-display display-6">Make a Reservation</h2>
+                        <p class="text-bark">All fields marked * are required. We'll send a confirmation to your email address. For same-day bookings, please call us directly.</p>
+                    </div>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="alert alert-success d-none mb-4" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i> Reservation received! A confirmation will arrive in your inbox shortly. We look forward to welcoming you.
+                    </div>
+
+                    <form id="reservationForm" class="needs-validation" novalidate>
+                        <div class="row g-4">
+                            <!-- Row 1 -->
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control border-smoke" id="firstName" required>
+                                <div class="invalid-feedback">Please enter your first name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control border-smoke" id="lastName" required>
+                                <div class="invalid-feedback">Please enter your last name.</div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control border-smoke" id="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone *</label>
+                                <input type="tel" class="form-control border-smoke" id="phone" required>
+                                <div class="invalid-feedback">Please enter your phone number.</div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="col-md-6">
+                                <label for="date" class="form-label">Date *</label>
+                                <input type="text" class="form-control border-smoke" id="date" placeholder="Select date" required>
+                                <div class="invalid-feedback">Please select a date.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="time" class="form-label">Time *</label>
+                                <input type="text" class="form-control border-smoke" id="time" placeholder="Select time" required>
+                                <div class="invalid-feedback">Please select a time.</div>
+                            </div>
+
+                            <!-- Row 4 -->
+                            <div class="col-md-6">
+                                <label for="partySize" class="form-label">Party Size *</label>
+                                <select class="form-select border-smoke" id="partySize" required>
+                                    <option value="" selected disabled>Select size</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9 People</option>
+                                    <option value="10">10 People</option>
+                                    <option value="11">11 People</option>
+                                    <option value="12">12 People</option>
+                                </select>
+                                <div class="invalid-feedback">Please select party size.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="occasion" class="form-label">Occasion</label>
+                                <select class="form-select border-smoke" id="occasion">
+                                    <option value="" selected>None</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="business">Business</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Row 5 & 6 -->
+                            <div class="col-12">
+                                <label for="dietary" class="form-label">Dietary Requirements</label>
+                                <textarea class="form-control border-smoke" id="dietary" rows="2" placeholder="Any allergies or dietary needs?"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="requests" class="form-label">Special Requests</label>
+                                <textarea class="form-control border-smoke" id="requests" rows="2" placeholder="Accessibility needs, seating preferences..."></textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="col-12 mt-5">
+                                <button type="submit" class="btn btn-primary w-100 btn-lg rounded-pill">Reserve My Table <i class="bi bi-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Info -->
+    <section class="section-lg bg-linen border-top border-smoke">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h3 class="font-display h4 text-center mb-4">Dining Policies</h3>
+                    <ul class="text-bark list-unstyled" style="line-height: 2;">
+                        <li><i class="bi bi-dot text-ember"></i> We hold reservations for 15 minutes past the booking time.</li>
+                        <li><i class="bi bi-dot text-ember"></i> Parties of 6 or more, please call us to book.</li>
+                        <li><i class="bi bi-dot text-ember"></i> 24-hour cancellation notice appreciated.</li>
+                        <li><i class="bi bi-dot text-ember"></i> Children welcome. High chairs available on request.</li>
+                        <li><i class="bi bi-dot text-ember"></i> Private dining available for groups of 12–24. Enquire below.</li>
+                        <li><i class="bi bi-dot text-ember"></i> We cannot guarantee specific tables, but will always try.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-lg">
+        <div class="container text-center text-md-start">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4 class="font-display text-white mb-3">EMBER & OAK</h4>
+                    <p class="text-smoke small mb-4">A neighbourhood restaurant where seasonal ingredients meet wood-fire craft.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                        <a href="#"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#"><i class="bi bi-twitter fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3 fs-6">Contact</h5>
+                    <ul class="list-unstyled text-smoke small">
+                        <li class="mb-2">14 Ashford Lane, Marylebone<br>London W1U 3QR</li>
+                        <li class="mb-2">hello@emberandoak.co.uk</li>
+                        <li>+44 (0)20 7946 0823</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-white mb-3 fs-6">Hours</h5>
+                    <ul class="list-unstyled text-smoke small">
+                        <li class="mb-2">Tue–Sat: 12:00 – 14:30 | 18:00 – 22:00</li>
+                        <li class="mb-2">Sun: 12:00 – 16:00</li>
+                        <li>Mon: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-4">
+            <p class="text-center text-smoke small mb-0">&copy; 2024 Ember & Oak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/reservations.js"></script>
+</body>
+</html>

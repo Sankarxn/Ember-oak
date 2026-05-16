@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Ember & Oak</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom navbar-solid">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EMBER & OAK</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1 text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                     <li class="nav-item"><a class="nav-link" href="our-story.html">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="reservations.html" class="btn btn-primary btn-sm px-4 rounded-pill">Reserve a Table</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="hero hero-sm" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container hero-content text-center pt-5">
+            <h1 class="hero-title font-display">Our Menu</h1>
+            <p class="lead mb-0">Updated weekly. Driven by what's seasonal, local, and right.</p>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="section-xl">
+        <div class="container">
+            <!-- Intro Note -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <p class="fst-italic text-bark">Our menu changes every week based on what arrives from our partner farms in the Chilterns and Kent. Tonight's selection is current as of this week — we recommend calling ahead if you have a particular dish in mind.</p>
+                    <p class="fst-italic text-bark mb-0">All dishes are prepared in a kitchen that handles nuts, gluten, dairy, and shellfish. Please inform your server of any allergies before ordering.</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <ul class="nav nav-tabs justify-content-center mb-5" id="menuTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="starters-tab" data-bs-toggle="tab" data-bs-target="#starters" type="button" role="tab">Starters</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="mains-tab" data-bs-toggle="tab" data-bs-target="#mains" type="button" role="tab">Mains</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="desserts-tab" data-bs-toggle="tab" data-bs-target="#desserts" type="button" role="tab">Desserts</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks" type="button" role="tab">Drinks</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="menuTabsContent">
+                        <!-- Starters -->
+                        <div class="tab-pane fade show active" id="starters" role="tabpanel">
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Charred Leek Velouté</div>
+                                    <div class="menu-item-desc">Wood-smoked leeks, crème fraîche, chive oil, sourdough croutons</div>
+                                </div>
+                                <div class="menu-item-price">£9</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Beetroot & Goat Cheese</div>
+                                    <div class="menu-item-desc">Roasted heritage beets, whipped chèvre, hazelnut, watercress</div>
+                                </div>
+                                <div class="menu-item-price">£10</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Beef Tartare</div>
+                                    <div class="menu-item-desc">Hand-cut Hereford beef, quail egg, capers, cornichon, grilled bread</div>
+                                </div>
+                                <div class="menu-item-price">£13</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Burrata</div>
+                                    <div class="menu-item-desc">Puglia burrata, heritage tomatoes, basil oil, Maldon sea salt</div>
+                                </div>
+                                <div class="menu-item-price">£12</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Scallops</div>
+                                    <div class="menu-item-desc">Pan-seared Orkney scallops, cauliflower purée, crispy pancetta, lemon foam</div>
+                                </div>
+                                <div class="menu-item-price">£16</div>
+                            </div>
+                        </div>
+
+                        <!-- Mains -->
+                        <div class="tab-pane fade" id="mains" role="tabpanel">
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Oak-Smoked Duck Breast</div>
+                                    <div class="menu-item-desc">Cherry jus, celeriac gratin, charred spring onion, duck fat crouton</div>
+                                </div>
+                                <div class="menu-item-price">£28</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Wood-Fire Lamb Rack</div>
+                                    <div class="menu-item-desc">Herb crust, roasted garlic, flageolet beans, rosemary jus</div>
+                                </div>
+                                <div class="menu-item-price">£32</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Dry-Aged Rib-Eye (250g)</div>
+                                    <div class="menu-item-desc">35-day aged Longhorn, beef dripping chips, watercress, béarnaise</div>
+                                </div>
+                                <div class="menu-item-price">£38</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Wild Mushroom Risotto <span class="badge bg-oak ms-2 fw-normal">(V)</span></div>
+                                    <div class="menu-item-desc">Porcini & shiitake, aged Parmesan, truffle oil, crispy sage</div>
+                                </div>
+                                <div class="menu-item-price">£22</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Whole Roasted Sea Bass</div>
+                                    <div class="menu-item-desc">Fennel & orange salsa, saffron potatoes, brown butter, samphire</div>
+                                </div>
+                                <div class="menu-item-price">£26</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Confit Chicken</div>
+                                    <div class="menu-item-desc">Free-range thigh, leek fondue, chanterelles, chicken jus, gremolata</div>
+                                </div>
+                                <div class="menu-item-price">£24</div>
+                            </div>
+                        </div>
+
+                        <!-- Desserts -->
+                        <div class="tab-pane fade" id="desserts" role="tabpanel">
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Burnt Basque Cheesecake</div>
+                                    <div class="menu-item-desc">Caramelised top, blackberry coulis, lavender cream</div>
+                                </div>
+                                <div class="menu-item-price">£9</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Chocolate Fondant</div>
+                                    <div class="menu-item-desc">70% Valrhona, pistachio gelato, praline crumble</div>
+                                </div>
+                                <div class="menu-item-price">£10</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Poached Pear</div>
+                                    <div class="menu-item-desc">Earl Grey pear, honey pannacotta, almond tuile</div>
+                                </div>
+                                <div class="menu-item-price">£9</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Cheese Board (3 pcs)</div>
+                                    <div class="menu-item-desc">Comté, Époisses, Colston Bassett Stilton, quince, crackers</div>
+                                </div>
+                                <div class="menu-item-price">£14</div>
+                            </div>
+                        </div>
+
+                        <!-- Drinks -->
+                        <div class="tab-pane fade" id="drinks" role="tabpanel">
+                            <h4 class="font-display mb-4 text-ember">Cocktails</h4>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Smoked Negroni</div>
+                                    <div class="menu-item-desc">Bourbon, campari, sweet vermouth, applewood smoke</div>
+                                </div>
+                                <div class="menu-item-price">£14</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Oak & Honey</div>
+                                    <div class="menu-item-desc">Laphroaig, honey syrup, lemon, thyme</div>
+                                </div>
+                                <div class="menu-item-price">£13</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Ember Sour</div>
+                                    <div class="menu-item-desc">Mezcal, blood orange, egg white, chilli salt rim</div>
+                                </div>
+                                <div class="menu-item-price">£13</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <h4 class="font-display mt-5 mb-4 text-ember">Wine (by the glass)</h4>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Sancerre, Domaine Vacheron, 2022</div>
+                                </div>
+                                <div class="menu-item-price">£13</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Barolo, Giacomo Conterno, 2019</div>
+                                </div>
+                                <div class="menu-item-price">£18</div>
+                            </div>
+                            <div class="menu-divider"></div>
+
+                            <h4 class="font-display mt-5 mb-4 text-ember">Non-Alcoholic</h4>
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">Seedlip Spice & Tonic</div>
+                                </div>
+                                <div class="menu-item-price">£8</div>
+                            </div>
+                            <div class="menu-divider"></div>
+                            
+                            <div class="menu-item">
+                                <div>
+                                    <div class="menu-item-name">House Shrub Lemonade</div>
+                                    <div class="menu-item-desc">Rotating seasonal</div>
+                                </div>
+                                <div class="menu-item-price">£5</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Allergen Notice Box -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <div class="p-4 border border-smoke text-center bg-cream rounded">
+                        <p class="small mb-1 fw-bold text-oak">Contains dishes with: Gluten | Dairy | Nuts | Shellfish | Eggs</p>
+                        <p class="small text-bark mb-0">Speak to your server — we will always do our best to accommodate.<br>(V) = Vegetarian. Vegan options available on request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations CTA -->
+    <section class="section-xl text-center" style="background-color: var(--color-linen);">
+        <div class="container">
+            <h2 class="font-display display-5 mb-4">Ready to join us?</h2>
+            <p class="text-bark mx-auto mb-5" style="max-width: 600px;">We hold your table for 15 minutes. Parties of 6 or more, please call us directly. Private dining available Tuesday through Saturday evenings.</p>
+            <a href="reservations.html" class="btn btn-primary btn-lg mb-3">Reserve Your Table</a>
+            <p class="text-bark small">Or call +44 (0)20 7946 0823</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-lg">
+        <div class="container text-center text-md-start">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h4 class="font-display text-white mb-3">EMBER & OAK</h4>
+                    <p class="text-smoke small mb-4">A neighbourhood restaurant where seasonal ingredients meet wood-fire craft.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                        <a href="#"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#"><i class="bi bi-twitter fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3 fs-6">Contact</h5>
+                    <ul class="list-unstyled text-smoke small">
+                        <li class="mb-2">14 Ashford Lane, Marylebone<br>London W1U 3QR</li>
+                        <li class="mb-2">hello@emberandoak.co.uk</li>
+                        <li>+44 (0)20 7946 0823</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-white mb-3 fs-6">Hours</h5>
+                    <ul class="list-unstyled text-smoke small">
+                        <li class="mb-2">Tue–Sat: 12:00 – 14:30 | 18:00 – 22:00</li>
+                        <li class="mb-2">Sun: 12:00 – 16:00</li>
+                        <li>Mon: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-4">
+            <p class="text-center text-smoke small mb-0">&copy; 2024 Ember & Oak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
